@@ -175,6 +175,47 @@ h1 em {
     text-transform: uppercase;
 }
 
+.landing-wheel {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 8vw;
+    top: 17vh;
+    transform: rotate(7deg);
+    transition: transform .35s ease;
+    width: min(39vw, 490px);
+    z-index: 1;
+}
+
+.landing-wheel:hover {
+    transform: rotate(0) scale(1.04);
+}
+
+.landing-wheel img {
+    display: block;
+    filter: drop-shadow(0 24px 16px rgba(23, 60, 59, .2));
+    width: 100%;
+}
+
+.landing-wheel span {
+    background: var(--coral);
+    box-shadow: 5px 5px 0 var(--ink);
+    color: var(--cream);
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+    margin-top: -20px;
+    padding: 14px 18px;
+    text-transform: uppercase;
+}
+
+.landing-wheel b {
+    color: var(--yellow);
+    font-size: 1.1rem;
+    margin-left: 12px;
+}
+
 .game-shell {
     background: var(--cream);
 }
@@ -867,6 +908,19 @@ h1 em {
 
     .landing-content {
         padding: 16vh 9vw 28vh;
+    }
+
+    .landing-wheel {
+        margin: 3vh auto 13vh;
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: rotate(4deg);
+        width: min(72vw, 350px);
+    }
+
+    .landing-wheel:hover {
+        transform: rotate(0) scale(1.02);
     }
 
     .landing-stamp {

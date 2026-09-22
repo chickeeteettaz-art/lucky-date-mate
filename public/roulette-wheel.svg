@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 620" role="img" aria-labelledby="title desc">
+  <title id="title">Lucky Date Mate roulette wheel</title>
+  <desc id="desc">A colorful six-section roulette wheel for choosing a date.</desc>
+  <circle cx="310" cy="310" r="290" fill="#173c3b"/>
+  <path d="M310 310 310 35a275 275 0 0 1 238.16 137.5Z" fill="#e87762"/>
+  <path d="M310 310 548.16 172.5A275 275 0 0 1 548.16 447.5Z" fill="#f6c94b"/>
+  <path d="M310 310 548.16 447.5A275 275 0 0 1 310 585Z" fill="#216c68"/>
+  <path d="M310 310 310 585A275 275 0 0 1 71.84 447.5Z" fill="#e87762"/>
+  <path d="M310 310 71.84 447.5A275 275 0 0 1 71.84 172.5Z" fill="#f6c94b"/>
+  <path d="M310 310 71.84 172.5A275 275 0 0 1 310 35Z" fill="#216c68"/>
+  <g fill="none" stroke="#fcfaf5" stroke-width="4" opacity=".78">
+    <path d="M310 35v550M71.84 172.5l476.32 275M71.84 447.5l476.32-275"/>
+  </g>
+  <g fill="#173c3b" font-family="Arial, sans-serif" font-size="25" font-weight="700" text-anchor="middle">
+    <text x="414" y="126" transform="rotate(30 414 126)">DATE</text>
+    <text x="500" y="316" transform="rotate(90 500 316)">+2</text>
+    <text x="405" y="507" transform="rotate(150 405 507)">TRY</text>
+    <text x="205" y="507" transform="rotate(210 205 507)">DATE</text>
+    <text x="120" y="316" transform="rotate(270 120 316)">-2</text>
+    <text x="205" y="126" transform="rotate(330 205 126)">DATE</text>
+  </g>
+  <circle cx="310" cy="310" r="76" fill="#fcfaf5" stroke="#173c3b" stroke-width="14"/>
+  <circle cx="310" cy="310" r="48" fill="#e87762"/>
+  <path d="M310 262v96M262 310h96" stroke="#fcfaf5" stroke-width="5" opacity=".8"/>
+</svg>
