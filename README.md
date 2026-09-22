@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lucky Date Mate
+
+Lucky Date Mate is a speed-dating roulette game built with Next.js and TypeScript. Players spin a six-slice wheel to discover potential dates, earn points, gain extra spins, or try again.
+
+## Features
+
+- 30 profile records stored in `data/index.js`
+- Three randomly selected potential dates on each round
+- Six roulette outcomes: three date profiles, `+2 spins`, `Try again`, and `-2 points`
+- Three starting spins per round
+- Points and spin tracking
+- Result popups with outcome-specific animations and sounds
+- Animated game-over state when the final spin is used
+- Fresh profile selection when a new round starts
+- Profile detail pages with WhatsApp redirect actions
+- Original procedural R&B-inspired Web Audio music with unique profile soundbites
+
+## Requirements
+
+- Node.js 20 or newer
+- npm
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in a browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the Next.js development server |
+| `npm run lint` | Run ESLint |
+| `npm run build` | Create a production build |
+| `npm run start` | Start the production server |
 
-## Learn More
+## How To Play
 
-To learn more about Next.js, take a look at the following resources:
+1. Open the home page and enter the roulette.
+2. The game starts with three spins and zero points.
+3. Spin the wheel to select one of the six outcomes.
+4. Landing on a date awards 10 points and opens that person&apos;s profile.
+5. `+2 spins` adds two spins and two points.
+6. `Try again` returns the spin that was used.
+7. `-2 points` removes two points, without reducing the score below zero.
+8. When the last spin is used, the animated game-over screen appears.
+9. Start a new round to reset the score, restore three spins, and select three new profiles.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Sound is disabled by default. Use the sound control in the game header to enable the ambient music and outcome cues. Browsers require audio to start after a user interaction.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Routes
 
-## Deploy on Vercel
+- `/` - Landing page
+- `/game` - Roulette game
+- `/profile/[id]` - Selected profile details and WhatsApp contact action
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+app/
+  game/page.tsx          Game state, roulette outcomes, points, and audio
+  profile/[id]/page.tsx  Profile detail route
+  globals.css            Global styles and animations
+  page.tsx               Landing page
+components/
+  RouletteWheel.tsx      Six-slice roulette wheel UI
+data/
+  index.js               30 profile records
+types/
+  user.ts                Shared User type
+```
+
+## Profile Data
+
+Profile data is currently local demo data. Each profile includes identity details, interests, personality traits, an image URL, and a WhatsApp-ready number. The WhatsApp numbers should be replaced with verified, consent-based contact details before production use.
+
+## Audio
+
+The game does not use a copyrighted recording or sample. Ambient music, action cues, and profile soundbites are generated in the browser with the Web Audio API. Each profile&apos;s soundbite is derived from its profile ID, giving every profile a consistent but distinct musical cue.
+
+## Production Build
+
+Run the checks before deployment:
+
+```bash
+npm run lint
+npm run build
+```
+
+The app can be deployed to any platform that supports Next.js, including Vercel.
