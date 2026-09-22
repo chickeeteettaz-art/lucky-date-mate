@@ -11,4 +11,5 @@ export type User = {
     personality: string[];
     height: string;
     image: string;
+    whatsapp: string;
 };

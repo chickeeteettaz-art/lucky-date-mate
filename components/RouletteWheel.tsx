@@ -4,6 +4,7 @@ type WheelOption = {
     label: string;
     kind: "profile" | "bonus" | "game-over";
     image?: string;
+    detail?: string;
 };
 
 type RouletteWheelProps = {
@@ -26,7 +27,10 @@ export default function RouletteWheel({ options, isSpinning, onSpin }: RouletteW
                             backgroundImage: option.image ? `url(${option.image})` : undefined,
                         }}
                     >
-                        <span>{option.image ? "" : option.label}</span>
+                        <span className="wheel-slice-copy">
+                            {option.image && <strong>{option.label}</strong>}
+                            <small>{option.detail ?? option.label}</small>
+                        </span>
                     </div>
                 ))}
                 <button className="wheel-hub" type="button" onClick={onSpin} disabled={isSpinning} aria-label="Spin the date wheel">

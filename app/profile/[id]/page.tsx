@@ -22,7 +22,13 @@ export default async function ProfilePage({ params }: { params: Promise<{ id: st
                     <p className="profile-bio">{profile.bio}</p>
                     <div className="profile-facts"><div><span>Looking for</span><strong>{profile.lookingFor}</strong></div><div><span>Height</span><strong>{profile.height}</strong></div><div><span>Energy</span><strong>{profile.personality.join(" / ")}</strong></div></div>
                     <div className="interest-list"><span>Into</span>{profile.interests.map((interest) => <span className="interest" key={interest}>{interest}</span>)}</div>
-                    <Link className="start-button profile-cta" href="/game">Spin again <span aria-hidden="true">↗</span></Link>
+                    <div className="profile-actions">
+                        <a className="whatsapp-button" href={`https://wa.me/${profile.whatsapp}`} target="_blank" rel="noreferrer" aria-label={`Message ${profile.name} on WhatsApp`}>
+                            <img src="https://cdn.simpleicons.org/whatsapp/ffffff" alt="" width="20" height="20" />
+                            Message on WhatsApp
+                        </a>
+                        <Link className="start-button profile-cta" href="/game">Spin again <span aria-hidden="true">↗</span></Link>
+                    </div>
                 </div>
             </section>
         </main>

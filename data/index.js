@@ -44,6 +44,7 @@ const users = profileSeeds.map(([name, age, location, occupation, bio, interests
   personality,
   height: `${160 + (index * 7) % 28} cm`,
   image: `https://i.pravatar.cc/600?img=${index + 1}`,
+  whatsapp: `2782000${String(index + 1).padStart(3, "0")}`,
 }));
 
 export default users;
